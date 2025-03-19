@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Music Artists</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Famous Country Music Artists</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="artists.html">Artists</a>
+        <a href="history.html">History</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Legendary Country Artists</h2>
+        <p>Country music has been shaped by some of the most talented musicians in history. These artists have left an undeniable impact on the genre, influencing future generations of country singers.</p>
+        <p>From classic icons like Johnny Cash and Dolly Parton to modern stars like Carrie Underwood and Luke Bryan, country music continues to evolve while staying true to its roots.</p>
+    </section>
+
+    <section>
+        <h2>Top Country Music Artists</h2>
+        <table>
+            <tr>
+                <th>Artist</th>
+                <th>Notable Songs</th>
+            </tr>
+            <tr>
+                <td>Johnny Cash</td>
+                <td>Ring of Fire, Folsom Prison Blues</td>
+            </tr>
+            <tr>
+                <td>Dolly Parton</td>
+                <td>Jolene, 9 to 5</td>
+            </tr>
+            <tr>
+                <td>Garth Brooks</td>
+                <td>Friends in Low Places, The Dance</td>
+            </tr>
+            <tr>
+                <td>Shania Twain</td>
+                <td>Man! I Feel Like a Woman, You're Still the One</td>
+            </tr>
+            <tr>
+                <td>Luke Bryan</td>
+                <td>Country Girl (Shake It for Me), Play It Again</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="image-gallery">
+        <h2>Featured Artists</h2>
+        <img src="images/johnny-cash.jpg" alt="Johnny Cash">
+        <img src="images/dolly-parton.jpg" alt="Dolly Parton">
+        <img src="images/garth-brooks.jpg" alt="Garth Brooks">
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Country Music Website</p>
+        <p>Location: Nashville, TN</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@countryvibes.com</p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.image-gallery img');
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                alert(`You clicked on ${img.alt}`);
+            });
+        });
+    </script>
+</body>
+</html>

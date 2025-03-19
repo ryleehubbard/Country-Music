@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Country Music</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>The History of Country Music</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="artists.html">Artists</a>
+        <a href="history.html">History</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Origins of Country Music</h2>
+        <p>Country music has deep roots in American history, emerging in the early 20th century. It developed from folk traditions brought by immigrants, blending elements of Appalachian, blues, and gospel music.</p>
+        <p>The first commercial country music recordings were made in the 1920s, with artists like Jimmie Rodgers and the Carter Family leading the way. Their storytelling and simple melodies set the foundation for the genre.</p>
+    </section>
+
+    <section>
+        <h2>Evolution of the Genre</h2>
+        <p>Country music has gone through many transformations over the decades. The 1950s and 60s saw the rise of honky-tonk and the Nashville Sound, making country music more polished and mainstream.</p>
+        <p>In the 1990s and beyond, artists like Garth Brooks and Shania Twain helped push country into the global spotlight, incorporating pop and rock influences. Today, country music continues to thrive, blending traditional and modern elements.</p>
+    </section>
+
+    <section class="image-gallery">
+        <h2>Historical Moments in Country Music</h2>
+        <img src="images/jimmie-rodgers.jpg" alt="Jimmie Rodgers">
+        <img src="images/carter-family.jpg" alt="The Carter Family">
+        <img src="images/nashville-sound.jpg" alt="Nashville Sound">
+    </section>
+
+    <section>
+        <h2>Learn More About Country Music</h2>
+        <a href="https://www.countrymusichalloffame.org/" target="_blank">Visit the Country Music Hall of Fame</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Country Music Website</p>
+        <p>Location: Nashville, TN</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@countryvibes.com</p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.image-gallery img');
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                alert(`You clicked on a historical image related to ${img.alt}`);
+            });
+        });
+    </script>
+</body>
+</html>
