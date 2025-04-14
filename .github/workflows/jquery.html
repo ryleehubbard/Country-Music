@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Interactive Page</title>
+    <!-- Include jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #togglePanel {
+            background-color: #f1c40f;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            margin-top: 10px;
+        }
+        
+        .highlight {
+            background-color: yellow;
+        }
+        
+        #accordion div {
+            padding: 10px;
+            background-color: #ecf0f1;
+            margin-bottom: 2px;
+        }
+        
+        #accordion h3 {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            margin: 2px 0;
+            cursor: pointer;
+        }
+        
+        #tabs {
+            margin-top: 20px;
+        }
+        
+        #tabs ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        #tabs li {
+            float: left;
+            cursor: pointer;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        #tabs li.active {
+            background-color: #2c3e50;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 0 5px 5px 5px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        #fadeImage {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        
+        #animatedBox {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            position: relative;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>My jQuery Interactive Page</h1>
+    
+    <!-- Interactive Element 1: Toggle Panel with Animation -->
+    <section>
+        <h2>Interactive Element 1: Toggle Panel</h2>
+        <p>Click the button below to toggle a panel with animation effects.</p>
+        <button id="toggleButton">Show/Hide Panel</button>
+        <div id="togglePanel">
+            <h3>Hidden Content</h3>
+            <p>This content appears and disappears with a sliding animation when you click the button above.</p>
+        </div>
+    </section>
+    
+    <!-- Interactive Element 2: Accordion -->
+    <section>
+        <h2>Interactive Element 2: Accordion</h2>
+        <p>Click on each header to expand or collapse the content.</p>
+        <div id="accordion">
+            <h3>Section 1</h3>
+            <div>
+                <p>This is the content for section 1. Click on any header to expand or collapse it.</p>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+                <p>Here's some content for section 2. The accordion effect uses jQuery to show and hide content.</p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+                <p>This is section 3's content. Only one section is visible at a time in this accordion.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Element 3: Tabs -->
+    <section>
+        <h2>Interactive Element 3: Tabs</h2>
+        <p>Click on each tab to view different content.</p>
+        <div id="tabs">
+            <ul>
+                <li class="active" data-tab="tab1">Tab 1</li>
+                <li data-tab="tab2">Tab 2</li>
+                <li data-tab="tab3">Tab 3</li>
+            </ul>
+            <div id="tab1" class="tab-content active">
+                <h3>Tab 1 Content</h3>
+                <p>This is the content for Tab 1. Each tab contains different information.</p>
+            </div>
+            <div id="tab2" class="tab-content">
+                <h3>Tab 2 Content</h3>
+                <p>Welcome to Tab 2! Using jQuery to switch between tabs is a common navigation pattern.</p>
+            </div>
+            <div id="tab3" class="tab-content">
+                <h3>Tab 3 Content</h3>
+                <p>This is Tab 3 content. Tabs help organize content in a user-friendly way.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Element 4: Fade Effects -->
+    <section>
+        <h2>Interactive Element 4: Fade Effects</h2>
+        <p>Try these buttons to see different fade effects on the image.</p>
+        <button id="fadeOut">Fade Out</button>
+        <button id="fadeIn">Fade In</button>
+        <button id="fadeTo">Fade To 50%</button>
+        <button id="fadeToggle">Fade Toggle</button>
+        <img id="fadeImage" src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+    </section>
+    
+    <!-- Interactive Element 5: Animation -->
+    <section>
+        <h2>Interactive Element 5: Animation</h2>
+        <p>Click the buttons to animate the box.</p>
+        <button id="moveRight">Move Right</button>
+        <button id="moveLeft">Move Left</button>
+        <button id="moveRandom">Random Move</button>
+        <button id="reset">Reset</button>
+        <div id="animatedBox"></div>
+    </section>
+
+    <!-- jQuery Script -->
+    <script>
+        $(document).ready(function() {
+            // Interactive Element 1: Toggle Panel
+            $("#toggleButton").click(function() {
+                $("#togglePanel").slideToggle(400);
+            });
+            
+            // Interactive Element 2: Accordion
+            $("#accordion div").hide();
+            $("#accordion h3").click(function() {
+                $("#accordion div").slideUp();
+                if(!$(this).next().is(":visible")) {
+                    $(this).next().slideDown();
+                }
+            });
+            
+            // Interactive Element 3: Tabs
+            $("#tabs li").click(function() {
+                var tabId = $(this).attr("data-tab");
+                
+                $("#tabs li").removeClass("active");
+                $(".tab-content").removeClass("active");
+                
+                $(this).addClass("active");
+                $("#" + tabId).addClass("active");
+            });
+            
+            // Interactive Element 4: Fade Effects
+            $("#fadeOut").click(function() {
+                $("#fadeImage").fadeOut(1000);
+            });
+            
+            $("#fadeIn").click(function() {
+                $("#fadeImage").fadeIn(1000);
+            });
+            
+            $("#fadeTo").click(function() {
+                $("#fadeImage").fadeTo(1000, 0.5);
+            });
+            
+            $("#fadeToggle").click(function() {
+                $("#fadeImage").fadeToggle(1000);
+            });
+            
+            // Interactive Element 5: Animation
+            $("#moveRight").click(function() {
+                $("#animatedBox").animate({
+                    left: "+=200px"
+                }, 500);
+            });
+            
+            $("#moveLeft").click(function() {
+                $("#animatedBox").animate({
+                    left: "-=200px"
+                }, 500);
+            });
+            
+            $("#moveRandom").click(function() {
+                var randSize = Math.floor(Math.random() * 100) + 50;
+                var randColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                
+                $("#animatedBox").animate({
+                    width: randSize,
+                    height: randSize,
+                    left: Math.floor(Math.random() * 200),
+                    opacity: Math.random()
+                }, 1000);
+                
+                $("#animatedBox").css("background-color", randColor);
+            });
+            
+            $("#reset").click(function() {
+                $("#animatedBox").animate({
+                    width: "100px",
+                    height: "100px",
+                    left: "0",
+                    opacity: 1
+                }, 500);
+                $("#animatedBox").css("background-color", "#e74c3c");
+            });
+        });
+    </script>
+</body>
+</html>
